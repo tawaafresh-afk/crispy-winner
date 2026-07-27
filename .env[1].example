@@ -1,0 +1,12 @@
+# Public site URL used for metadata, sitemap and canonical links.
+NEXT_PUBLIC_SITE_URL=https://www.tawaafresh.co.uk
+
+# Optional: enables real email delivery for the enquiry and quote forms via
+# Resend (https://resend.com). Without this, submissions are logged
+# server-side instead of emailed — the forms still work end-to-end.
+RESEND_API_KEY=
+RESEND_FROM_EMAIL="Tawaa Fresh Website <onboarding@resend.dev>"
+
+# Optional: only needed if you swap the static map placeholder on the
+# Contact page for a live Google Maps embed (see MapPlaceholder.tsx).
+NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=
