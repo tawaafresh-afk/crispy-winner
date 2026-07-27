@@ -10,7 +10,7 @@ import { whatsappLink } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Menu",
   description:
-    "Explore the full Tawaa Fresh catering menu — canapés, live tawaa & BBQ stations, signature curries, biryani, desserts and a mocktail bar, all halal certified.",
+    "The Tawaa Fresh catering menu — chicken karahi, butter chicken, chicken curry, lamb curry, mixed vegetable curry, pilau rice, samosas, onion bhajis, naan, and mint and coriander sauce.",
   alternates: { canonical: "/menu" },
 };
 
@@ -19,8 +19,12 @@ export default function MenuPage() {
     <>
       <PageHero
         eyebrow="Our Menu"
-        title="A menu built on generations of home cooking"
-        description="Every dish is fully customisable for your guest list — swap spice levels, add dietary variations, or ask us to bring a family recipe of your own to life."
+        title="Freshly prepared Pakistani dishes"
+        description="Available as disposable tray catering or a complete buffet setup."
+        image={{
+          src: "/images/menu-banner.webp",
+          alt: "Close-up of Tawaa Fresh naan, rice and curry dishes on a buffet table",
+        }}
       />
 
       <section className="bg-cream-50 py-24 sm:py-28">
@@ -28,12 +32,12 @@ export default function MenuPage() {
           <MenuExplorer />
 
           <div className="mt-20 flex flex-col items-center gap-4 rounded-3xl bg-cream-100 p-10 text-center">
-            <h3 className="font-serif text-2xl text-ink-900">Don&apos;t see what you&apos;re after?</h3>
+            <h3 className="font-serif text-2xl text-ink-900">Have a question about a dish?</h3>
             <p className="max-w-md text-sm text-ink-600">
-              Our chefs love a challenge — send us a family recipe or a dish you tasted on your last trip home and we&apos;ll work it into your menu.
+              Get in touch and we&apos;ll be happy to help.
             </p>
-            <Button href={whatsappLink("Hi Tawaa Fresh, I have a specific dish request for my menu.")} variant="primary">
-              <MessageCircle className="h-4 w-4" /> Ask Our Chefs
+            <Button href={whatsappLink("Hi Tawaa Fresh, I have a question about the menu.")} variant="primary">
+              <MessageCircle className="h-4 w-4" /> Ask Us
             </Button>
           </div>
         </Container>

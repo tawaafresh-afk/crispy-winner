@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 import { siteConfig } from "@/lib/site-config";
 
 /**
- * Static, styled placeholder for the venue map — no API key required.
+ * Static, styled placeholder for the area map — no API key required.
  * To use a live embed, replace this component's contents with:
  *
  *   <iframe
- *     src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(siteConfig.mapEmbedQuery)}`}
+ *     src={`https://www.google.com/maps/embed/v1/place?key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent(siteConfig.location.display)}`}
  *     className="h-full w-full border-0"
  *     loading="lazy"
  *     referrerPolicy="no-referrer-when-downgrade"
@@ -19,7 +19,7 @@ import { siteConfig } from "@/lib/site-config";
  */
 export function MapPlaceholder() {
   const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    siteConfig.mapEmbedQuery
+    siteConfig.location.display
   )}`;
 
   return (
@@ -49,10 +49,8 @@ export function MapPlaceholder() {
 
       <div className="absolute bottom-4 left-4 right-4 flex flex-col gap-3 rounded-2xl bg-white/90 p-4 backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p className="text-sm font-semibold text-ink-900">Tawaa Fresh Kitchen</p>
-          <p className="text-xs text-ink-500">
-            {siteConfig.address.line1}, {siteConfig.address.city}, {siteConfig.address.postcode}
-          </p>
+          <p className="text-sm font-semibold text-ink-900">Tawaa Fresh</p>
+          <p className="text-xs text-ink-500">{siteConfig.location.display}</p>
         </div>
         <a
           href={directionsUrl}
@@ -60,7 +58,7 @@ export function MapPlaceholder() {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 rounded-full bg-brand-800 px-4 py-2 text-xs font-semibold text-cream-50 transition-colors hover:bg-brand-700"
         >
-          Get Directions <ExternalLink className="h-3.5 w-3.5" />
+          View Area <ExternalLink className="h-3.5 w-3.5" />
         </a>
       </div>
     </div>

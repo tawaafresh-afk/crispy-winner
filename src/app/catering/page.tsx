@@ -6,15 +6,14 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { Packages } from "@/components/catering/Packages";
+import { CateringOptionCards } from "@/components/catering/CateringOptionCards";
 import { CtaBanner } from "@/components/home/CtaBanner";
-import { services, bookingProcess, faqs } from "@/lib/site-config";
-import { iconMap } from "@/lib/icon-map";
+import { bookingProcess, faqs, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Catering Services",
+  title: "Catering",
   description:
-    "Luxury Pakistani catering for weddings, walimas, mehndis, corporate events and private parties — live tawaa stations, bespoke menus and full event staffing.",
+    "Authentic Pakistani catering across Medway, Maidstone, Gravesend, Dartford and surrounding areas — disposable tray catering or a complete buffet setup.",
   alternates: { canonical: "/catering" },
 };
 
@@ -22,54 +21,33 @@ export default function CateringPage() {
   return (
     <>
       <PageHero
-        eyebrow="Catering Services"
-        title="Bespoke catering for every kind of celebration"
-        description="Whether you're hosting 40 guests or 800, we build a menu and service style around your event — not the other way around."
+        eyebrow="Catering"
+        title="Authentic Pakistani catering for your event"
+        description={`Serving ${siteConfig.serviceAreas.join(", ")} and surrounding areas.`}
+        image={{
+          src: "/images/catering-banner.webp",
+          alt: "Tawaa Fresh buffet setup with chafing dishes of rice, butter chicken and mutton karahi",
+        }}
       />
 
       <section className="bg-cream-50 py-24 sm:py-28">
         <Container>
-          <RevealGroup className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const Icon = iconMap[service.icon];
-              return (
-                <RevealItem key={service.slug}>
-                  <div className="flex h-full flex-col rounded-3xl border border-ink-100 bg-white p-8">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-800/5 text-brand-800">
-                      <Icon className="h-6 w-6" />
-                    </span>
-                    <h3 className="mt-5 font-serif text-xl text-ink-900">{service.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-ink-600">{service.summary}</p>
-                  </div>
-                </RevealItem>
-              );
-            })}
-          </RevealGroup>
+          <SectionHeading
+            eyebrow="Catering Options"
+            title="Choose tray catering or a complete buffet setup"
+          />
+          <div className="mt-16">
+            <CateringOptionCards />
+          </div>
+          <p className="mt-8 text-center text-sm text-ink-400">
+            Get in touch for a quote based on your guest numbers and chosen dishes.
+          </p>
         </Container>
       </section>
 
       <section className="bg-cream-100 py-24 sm:py-28">
         <Container>
-          <SectionHeading
-            eyebrow="Packages & Pricing"
-            title="Transparent packages, tailored on request"
-            description="Every package can be customised — think of these as a starting point for your tasting conversation."
-          />
-          <div className="mt-16">
-            <Packages />
-          </div>
-          <p className="mt-8 text-center text-sm text-ink-400">
-            Prices exclude travel outside a 30-mile radius of Birmingham and premium equipment hire. Final pricing confirmed after your tasting.
-          </p>
-        </Container>
-      </section>
-
-      <section className="bg-cream-50 py-24 sm:py-28">
-        <Container>
-          <SectionHeading
-            eyebrow="How It Works"
-            title="Booking with Tawaa Fresh, step by step"
-          />
+          <SectionHeading eyebrow="How It Works" title="Booking with Tawaa Fresh" />
           <RevealGroup className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {bookingProcess.map((step) => (
               <RevealItem key={step.step}>
@@ -82,7 +60,7 @@ export default function CateringPage() {
         </Container>
       </section>
 
-      <section className="bg-cream-100 py-24 sm:py-28">
+      <section className="bg-cream-50 py-24 sm:py-28">
         <Container className="max-w-3xl">
           <SectionHeading eyebrow="Good to Know" title="Frequently asked questions" />
           <div className="mt-14">

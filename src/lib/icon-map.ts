@@ -1,18 +1,8 @@
-import {
-  Sparkles,
-  Music,
-  Briefcase,
-  PartyPopper,
-  HandHeart,
-  Flame,
-  type LucideIcon,
-} from "lucide-react";
+import { Package, UtensilsCrossed, ShieldCheck, MapPinned, type LucideIcon } from "lucide-react";
 
 export const iconMap: Record<string, LucideIcon> = {
-  Sparkles,
-  Music,
-  Briefcase,
-  PartyPopper,
-  HandHeart,
-  Flame,
+  Package,
+  UtensilsCrossed,
+  ShieldCheck,
+  MapPinned,
 };

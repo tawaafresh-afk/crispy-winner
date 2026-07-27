@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Phone, MapPin, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -10,19 +10,14 @@ import { siteConfig, whatsappLink, defaultWhatsappMessage } from "@/lib/site-con
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    "Get in touch with Tawaa Fresh — call, WhatsApp or send an enquiry about catering for your wedding, corporate event or private celebration.",
+  description: "Get in touch with Tawaa Fresh — call, WhatsApp, or send an enquiry about catering.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Contact"
-        title="Let's start planning your event"
-        description="Reach us however suits you best — we typically reply within a few hours during business hours."
-      />
+      <PageHero eyebrow="Contact" title="Let's start planning your catering" />
 
       <section className="bg-cream-50 py-24 sm:py-28">
         <Container>
@@ -37,23 +32,10 @@ export default function ContactPage() {
               <ContactCard
                 icon={MessageCircle}
                 title="WhatsApp"
-                lines={["Fastest way to reach us"]}
+                lines={[siteConfig.phoneDisplay]}
                 href={whatsappLink(defaultWhatsappMessage)}
               />
-              <ContactCard icon={Mail} title="Email" lines={[siteConfig.email]} href={`mailto:${siteConfig.email}`} />
-              <ContactCard
-                icon={MapPin}
-                title="Visit our kitchen"
-                lines={[
-                  `${siteConfig.address.line1}, ${siteConfig.address.line2}`,
-                  `${siteConfig.address.city}, ${siteConfig.address.postcode}`,
-                ]}
-              />
-              <ContactCard
-                icon={Clock}
-                title="Opening hours"
-                lines={siteConfig.hours.map((h) => `${h.day}: ${h.time}`)}
-              />
+              <ContactCard icon={MapPin} title="Based in" lines={[siteConfig.location.display]} />
             </div>
 
             <Reveal as="right" className="rounded-3xl border border-ink-100 bg-white p-8 sm:p-10">
@@ -75,7 +57,7 @@ export default function ContactPage() {
 
       <section className="bg-cream-100 py-24 sm:py-28">
         <Container>
-          <SectionHeading eyebrow="Find Us" title="Visit our kitchen in Birmingham" />
+          <SectionHeading eyebrow="Where We're Based" title={siteConfig.location.display} />
           <div className="mt-12">
             <MapPlaceholder />
           </div>

@@ -1,28 +1,28 @@
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
-import { PatternTile } from "@/components/ui/PatternTile";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { galleryImages } from "@/lib/site-config";
 
 export function GalleryPreview() {
-  const preview = galleryImages.slice(0, 6);
-
   return (
     <section className="bg-cream-50 py-24 sm:py-32">
       <Container>
-        <SectionHeading eyebrow="Moments We've Catered" title="A glimpse into our events" />
+        <SectionHeading eyebrow="Gallery" title="Our catering in photos" />
 
-        <RevealGroup className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {preview.map((img, i) => (
+        <RevealGroup className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {galleryImages.map((img) => (
             <RevealItem key={img.id}>
-              <div
-                className={`aspect-square overflow-hidden rounded-2xl ${
-                  i === 0 || i === 5 ? "sm:col-span-1 sm:row-span-1" : ""
-                }`}
-              >
-                <PatternTile tone={img.tone} patternId={`gp-${img.id}`} />
+              <div className="relative aspect-square overflow-hidden rounded-2xl">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  sizes="(min-width: 640px) 25vw, 50vw"
+                  className="object-cover"
+                />
               </div>
             </RevealItem>
           ))}

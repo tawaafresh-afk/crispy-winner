@@ -1,4 +1,4 @@
-import { ChefHat, ShieldCheck, Clock, Users2 } from "lucide-react";
+import { ChefHat, ShieldCheck, MapPinned, UtensilsCrossed } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/Reveal";
@@ -7,23 +7,23 @@ import { PatternTile } from "@/components/ui/PatternTile";
 const points = [
   {
     icon: ChefHat,
-    title: "Cooked fresh, on site",
-    description: "No chafing-dish reheats. Our chefs cook curries, breads and grills live at your venue.",
+    title: "Freshly prepared",
+    description: "Our Pakistani dishes are freshly prepared for your event.",
   },
   {
     icon: ShieldCheck,
-    title: "100% halal & certified",
-    description: "Every supplier is halal-certified and our kitchen holds a 5-star food hygiene rating.",
+    title: "5★ food hygiene rating",
+    description: "Tawaa Fresh holds the top food hygiene rating.",
   },
   {
-    icon: Clock,
-    title: "Punctual, always",
-    description: "We arrive hours early to set up, and stay until the very last plate is cleared away.",
+    icon: UtensilsCrossed,
+    title: "Tray or buffet catering",
+    description: "Choose disposable tray catering, or a complete buffet setup with chafing dishes, warming equipment, utensils and food labels.",
   },
   {
-    icon: Users2,
-    title: "A dedicated event manager",
-    description: "One point of contact from your first enquiry through to the final course served.",
+    icon: MapPinned,
+    title: "Local to Kent",
+    description: "Based in Walderslade, Medway — serving Medway, Maidstone, Gravesend, Dartford and surrounding areas.",
   },
 ];
 
@@ -35,7 +35,7 @@ export function WhyUs() {
         <div className="relative mx-auto aspect-square w-full max-w-md">
           <div className="absolute inset-4 rounded-full border border-gold-400/20" />
           <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] shadow-2xl">
-            <PatternTile tone="gold" patternId="whyus-1" label="Chef's Live Grill" />
+            <PatternTile tone="gold" patternId="whyus-1" label="Complete Buffet Setup" />
           </div>
         </div>
 
@@ -44,8 +44,8 @@ export function WhyUs() {
             eyebrow="Why Tawaa Fresh"
             align="left"
             tone="dark"
-            title="Hospitality passed down, cooked up to a five-star standard"
-            description="Founded on a family recipe book and a belief that catering should feel as generous as a home-cooked meal — just executed with hotel-grade precision."
+            title="Authentic Pakistani catering, done properly"
+            description="Freshly prepared food and a catering option that fits your event, from Walderslade, Medway."
           />
 
           <RevealGroup className="mt-10 grid gap-6 sm:grid-cols-2">

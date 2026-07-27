@@ -8,16 +8,15 @@ import { siteConfig, whatsappLink } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Get a Quote",
-  description:
-    "Request a tailored catering quote from Tawaa Fresh — tell us your event date, guest count and menu preferences and we'll respond within 24 hours.",
+  description: "Request a catering quote from Tawaa Fresh — tell us your event details and guest numbers.",
   alternates: { canonical: "/quote" },
 };
 
 const reassurances = [
-  "Response within 24 hours",
-  "No obligation, no pressure",
-  "Free tasting on Gold & Platinum bookings",
-  "Fully halal-certified menus",
+  "5★ food hygiene rating",
+  "Disposable tray or complete buffet setup",
+  "Serving Medway, Maidstone, Gravesend & Dartford",
+  "Call or WhatsApp 07477 211142",
 ];
 
 export default function QuotePage() {
@@ -26,7 +25,7 @@ export default function QuotePage() {
       <PageHero
         eyebrow="Request a Quote"
         title="Tell us about your event"
-        description="The more detail you share, the more accurate your quote — but don't worry if you don't have everything confirmed yet."
+        description="The more detail you share, the more accurate your quote."
       />
 
       <section className="bg-cream-50 py-24 sm:py-28">
@@ -37,7 +36,7 @@ export default function QuotePage() {
 
           <div className="space-y-6">
             <Reveal as="right" className="rounded-3xl bg-brand-950 p-8 text-cream-50">
-              <h3 className="font-serif text-xl">Why enquire with Tawaa Fresh?</h3>
+              <h3 className="font-serif text-xl">Why choose Tawaa Fresh?</h3>
               <ul className="mt-5 space-y-3">
                 {reassurances.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-cream-200/85">
@@ -50,9 +49,7 @@ export default function QuotePage() {
 
             <Reveal as="right" delay={0.1} className="rounded-3xl border border-ink-100 bg-white p-8">
               <h3 className="font-serif text-xl text-ink-900">Prefer to talk it through?</h3>
-              <p className="mt-2 text-sm text-ink-600">
-                Call or message us directly and we&apos;ll talk through your event on the spot.
-              </p>
+              <p className="mt-2 text-sm text-ink-600">Call or message us directly.</p>
               <div className="mt-5 flex flex-col gap-3">
                 <a
                   href={`tel:${siteConfig.phoneHref}`}

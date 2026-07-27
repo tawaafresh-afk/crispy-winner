@@ -1,40 +1,39 @@
 import type { Metadata } from "next";
-import { ShieldCheck, Award, Leaf, Heart } from "lucide-react";
+import Image from "next/image";
+import { ShieldCheck, ChefHat, MapPinned, UtensilsCrossed } from "lucide-react";
 import { PageHero } from "@/components/layout/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
-import { PatternTile } from "@/components/ui/PatternTile";
 import { CtaBanner } from "@/components/home/CtaBanner";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description:
-    "Founded in 2011, Tawaa Fresh has grown from a family kitchen into one of the UK's leading luxury Pakistani catering companies.",
+  description: "Tawaa Fresh provides authentic Pakistani catering from Walderslade, Medway, Kent.",
   alternates: { canonical: "/about" },
 };
 
 const values = [
   {
-    icon: Heart,
-    title: "Hospitality first",
-    description: "We cater the way we'd want to be hosted — generously, warmly, without compromise.",
-  },
-  {
-    icon: Leaf,
-    title: "Fresh, always",
-    description: "Nothing is pre-cooked and reheated. Our kitchen and live stations cook to order.",
+    icon: ChefHat,
+    title: "Freshly prepared",
+    description: "Our Pakistani dishes are freshly prepared for your event.",
   },
   {
     icon: ShieldCheck,
-    title: "Trust & certification",
-    description: "Halal-certified suppliers, 5-star food hygiene rating, fully insured event staff.",
+    title: "5★ food hygiene rating",
+    description: "Tawaa Fresh holds the top food hygiene rating.",
   },
   {
-    icon: Award,
-    title: "Never stop refining",
-    description: "Every recipe is tasted, tested and refined by our head chef before it reaches your menu.",
+    icon: UtensilsCrossed,
+    title: "Two catering options",
+    description: "Disposable tray catering, or a complete buffet setup with chafing dishes, warming equipment, utensils and food labels.",
+  },
+  {
+    icon: MapPinned,
+    title: "Serving Kent",
+    description: `Based in ${siteConfig.location.display}, covering ${siteConfig.serviceAreas.join(", ")} and surrounding areas.`,
   },
 ];
 
@@ -42,53 +41,49 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="Our Story"
-        title="From a family kitchen to the UK's weddings and boardrooms"
-        description={`Since ${siteConfig.founded}, Tawaa Fresh has been bringing the warmth of a Pakistani home kitchen to events of every size.`}
+        eyebrow="About Us"
+        title="Authentic Pakistani catering from Walderslade, Medway"
+        description="Tawaa Fresh serves Medway, Maidstone, Gravesend, Dartford and surrounding areas in Kent."
       />
 
       <section className="bg-cream-50 py-24 sm:py-28">
         <Container className="grid gap-14 lg:grid-cols-2 lg:items-center">
           <Reveal as="left">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold-600">
-              How it started
+              What we do
             </span>
             <h2 className="mt-4 font-serif text-3xl text-ink-900 sm:text-4xl">
-              A recipe book, a single tawaa, and a wedding for 60 guests
+              Authentic Pakistani food, catered your way
             </h2>
             <div className="mt-6 space-y-4 text-ink-600 leading-relaxed">
               <p>
-                Tawaa Fresh began in {siteConfig.founded} when our founder started cooking for
-                friends&apos; weddings out of a home kitchen in Birmingham — using recipes passed down
-                from three generations of home cooks. Word spread quickly: guests kept asking who
-                had catered the nihari.
+                Tawaa Fresh provides authentic Pakistani catering from Walderslade,
+                Medway, Kent — serving Medway, Maidstone, Gravesend, Dartford and
+                surrounding areas.
               </p>
               <p>
-                Today we run a full commercial kitchen and a team of dedicated chefs and event
-                staff, but the standard hasn&apos;t changed — every curry is still tasted by hand,
-                every naan still rolled fresh, and every event still treated like it&apos;s the only
-                one we&apos;re catering that week.
+                We offer disposable tray catering for simple, easy serving, or a
+                complete buffet setup with chafing dishes, warming equipment,
+                serving utensils and food labels.
               </p>
-              <p>
-                We&apos;ve since catered over 2,400 events across the UK, from 40-guest aqeeqahs to
-                800-guest walima receptions, while keeping the same family recipes at the heart of
-                every menu.
-              </p>
+              <p>Tawaa Fresh holds a 5-star food hygiene rating.</p>
             </div>
           </Reveal>
           <Reveal as="right" className="relative aspect-[4/5] w-full overflow-hidden rounded-[2.5rem] shadow-xl">
-            <PatternTile tone="maroon" patternId="about-1" label="Our Founding Kitchen Team" />
+            <Image
+              src="/images/serving-action.webp"
+              alt="Rice being served from a chafing dish at a Tawaa Fresh buffet"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
           </Reveal>
         </Container>
       </section>
 
       <section className="bg-brand-950 py-24 sm:py-28">
         <Container>
-          <SectionHeading
-            eyebrow="What We Stand For"
-            title="The values behind every plate we serve"
-            tone="dark"
-          />
+          <SectionHeading eyebrow="What We Offer" title="What to expect from Tawaa Fresh" tone="dark" />
           <RevealGroup className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
               <RevealItem key={value.title}>
@@ -102,19 +97,6 @@ export default function AboutPage() {
               </RevealItem>
             ))}
           </RevealGroup>
-        </Container>
-      </section>
-
-      <section className="bg-cream-50 py-24 sm:py-28">
-        <Container>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {siteConfig.stats.map((stat) => (
-              <Reveal key={stat.label} as="scale" className="rounded-3xl bg-cream-100 p-8 text-center">
-                <p className="font-serif text-4xl text-brand-800">{stat.value}</p>
-                <p className="mt-2 text-sm uppercase tracking-wide text-ink-500">{stat.label}</p>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 

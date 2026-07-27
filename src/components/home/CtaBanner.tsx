@@ -11,10 +11,10 @@ export function CtaBanner() {
       <Container className="relative">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="font-serif text-3xl text-brand-950 sm:text-4xl">
-            Ready to plan a celebration your guests will still talk about next year?
+            Ready to book authentic Pakistani catering for your event?
           </h2>
           <p className="mt-4 text-brand-900/80">
-            Tell us your date and guest count — we&apos;ll come back to you with a tailored quote within 24 hours.
+            Tell us your date and guest numbers — we&apos;ll get back to you with a quote.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button href="/quote" variant="primary" size="lg">
