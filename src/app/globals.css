@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+@import "@fontsource/playfair-display/400.css";
+@import "@fontsource/playfair-display/500.css";
+@import "@fontsource/playfair-display/600.css";
+@import "@fontsource/playfair-display/700.css";
+@import "@fontsource/playfair-display/400-italic.css";
+@import "@fontsource/playfair-display/600-italic.css";
+@import "@fontsource/cormorant-garamond/500-italic.css";
+@import "@fontsource/cormorant-garamond/600-italic.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+
+:root {
+  --background: #fffdf9;
+  --foreground: #1b1712;
+}
+
+@theme {
+  --color-brand-50: #f1f8f4;
+  --color-brand-100: #dcede3;
+  --color-brand-200: #b5dac6;
+  --color-brand-300: #86bf9f;
+  --color-brand-400: #559c78;
+  --color-brand-500: #337f5a;
+  --color-brand-600: #226647;
+  --color-brand-700: #1c5138;
+  --color-brand-800: #163f2b;
+  --color-brand-900: #0e2e1f;
+  --color-brand-950: #081d14;
+
+  --color-gold-50: #fdf9ec;
+  --color-gold-100: #faf0c9;
+  --color-gold-200: #f3dd8e;
+  --color-gold-300: #ecc85c;
+  --color-gold-400: #dfb03d;
+  --color-gold-500: #cb9928;
+  --color-gold-600: #a8791f;
+  --color-gold-700: #855e1c;
+  --color-gold-800: #6c4c1c;
+  --color-gold-900: #5b3f1c;
+
+  --color-cream-50: #fffdf9;
+  --color-cream-100: #fbf6ea;
+  --color-cream-200: #f5ecd6;
+  --color-cream-300: #ecdfc0;
+
+  --color-maroon-500: #8c2436;
+  --color-maroon-600: #7c1d2e;
+  --color-maroon-700: #611626;
+  --color-maroon-800: #4a101d;
+
+  --color-ink-50: #f6f5f3;
+  --color-ink-100: #e8e5e0;
+  --color-ink-400: #746c60;
+  --color-ink-600: #45403a;
+  --color-ink-700: #322e29;
+  --color-ink-800: #221f1b;
+  --color-ink-900: #1b1712;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
+  --font-accent: "Cormorant Garamond", ui-serif, Georgia, serif;
+
+  --shadow-lift: 0 20px 45px -20px rgb(14 46 31 / 0.35);
+  --shadow-gold: 0 12px 30px -12px rgb(203 153 40 / 0.45);
+
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.8s ease both;
+  --animate-marquee: marquee 32s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #fffdf9;
+    --foreground: #1b1712;
+  }
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-accent {
+  font-family: var(--font-accent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(110deg, #e8c766 0%, #cb9928 45%, #f3dd8e 75%, #cb9928 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-noise {
+  background-image: radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.06) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+.paisley-mask {
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-brand-950);
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
